@@ -1,52 +1,23 @@
-
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>landingpage | Personal landingpage</title>
-<meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="landingpage" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Personal landingpage" />
-<meta property="og:description" content="Personal landingpage" />
-<link rel="canonical" href="https://carlosmbpereira.github.io/landingpage/" />
-<meta property="og:url" content="https://carlosmbpereira.github.io/landingpage/" />
-<meta property="og:site_name" content="landingpage" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="landingpage" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Personal landingpage","headline":"landingpage","name":"landingpage","url":"https://carlosmbpereira.github.io/landingpage/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/landingpage/assets/css/style.css?v=83ac4a8ee761fae35641ac314858166b7e2c16c6">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/landingpage/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
+    <title>Minimal Leaflet Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>
+      html, body, #map { margin: 0; height: 100%; width: 100%; }
+    </style>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   </head>
   <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-
-      <h1 id="landingpage">landingpage</h1>
-<p>Personal landingpage index.html</p>
-
-
-      
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    <div id="map"></div>
+    <script type="text/javascript">
+      var map = L.map('map').setView([37.8, -96], 3);
+      <!-- http://switch2osm.org/using-tiles/getting-started-with-leaflet/ -->
+      var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+      var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib})
+      map.addLayer(osm);
+    </script>
   </body>
 </html>
